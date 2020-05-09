@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+import android.os.Handler;
 
 
 import com.journaldev.androidmvvmbasics.R;
@@ -22,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
         ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         activityMainBinding.setViewModel(new LoginViewModel());
         activityMainBinding.executePendingBindings();
+
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                // do something..
+            }
+        }, 100);
 
     }
 
